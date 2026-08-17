@@ -15,7 +15,7 @@ from utils import (
     parser_xml,
     remballer_twbx,
 )
-from outil_resize import (
+from outil1_resize import (
     recuperer_dashboards_avec_tailles,
     modifier_tableaux_de_bord,
     init_df_resize,
