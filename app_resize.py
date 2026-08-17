@@ -113,7 +113,6 @@ Un bouton **Télécharger** apparaît : cliquez dessus pour récupérer le fichi
         "steps_expander":    "📋 How to use this tool",
         "steps_content":     """
 > 🔒 **Privacy** — This tool never reads the data from your extracts (`.hyper` files). Only the XML structure of the workbook is modified. However, uploaded files transit through Streamlit Cloud's servers: if your `.twbx` contains an extract with sensitive data, **prefer uploading the `.twb` file** instead.
-
 **Step 1 — Load the workbook**
 Upload your **.twb** or **.twbx** file using the button below.
 
@@ -318,6 +317,13 @@ def main():
                 )
             except ValueError as e:
                 st.error(str(e))
+    # ── Footer ────────────────────────────────────────────────────
+    st.markdown(
+        "<p style='text-align:center; color:grey; font-size:0.8em;'>"
+        "Dashboard Resize App &nbsp;|&nbsp; © Idir Saidani & AI"
+        "</p>",
+        unsafe_allow_html=True,
+    )
 
 
 if __name__ == "__main__":
