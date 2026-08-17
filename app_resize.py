@@ -31,7 +31,7 @@ TRANSLATIONS = {
         "upload_label": "Uploader le fichier .twb ou .twbx",
         "upload_error": "❌ Impossible de lire le fichier : {}",
         "tds_not_applicable": "Cet outil ne s'applique pas aux fichiers .tds (source de données sans classeur).",
-        "upload_required":   "⬆️ Uploadez un fichier .twb ou .twbx pour utiliser cet outil.",
+        "description":       "Modifie les dimensions des dashboards d'un classeur Tableau (.twb / .twbx) et recalcule automatiquement les positions de chaque objet.",
         "resize_apply_all_title":   "Appliquer à tous les dashboards cochés",
         "resize_common_width":      "Largeur commune",
         "resize_common_height":     "Hauteur commune",
@@ -55,13 +55,36 @@ TRANSLATIONS = {
         "resize_download":   "⬇️ Télécharger le fichier modifié",
         "resize_no_dashboard": "Aucun dashboard trouvé dans ce fichier.",
         "resize_suffix":     "_redimensionné",
+        "steps_expander":    "📋 Comment utiliser cet outil",
+        "steps_content":     """
+**Étape 1 — Charger le classeur**
+Uploadez votre fichier **.twb** ou **.twbx** via le bouton ci-dessous.
+
+---
+
+**Étape 2 — Appliquer les mêmes dimensions à tous les dashboards** *(optionnel)*
+Saisissez une largeur et/ou une hauteur commune, cochez les dashboards à affecter, puis cliquez sur **↓ Appliquer à tous**.
+
+*— ou —*
+
+**Étape 3 — Modifier chaque dashboard individuellement**
+Dans le tableau, cochez les dashboards à redimensionner et renseignez leurs nouvelles dimensions ligne par ligne.
+
+---
+
+**Étape 4 — Lancer la modification**
+Cliquez sur le bouton **Modifier** en bas de page.
+
+**Étape 5 — Télécharger le résultat**
+Un bouton **Télécharger** apparaît : cliquez dessus pour récupérer le fichier modifié.
+""",
     },
     "en": {
         "title":        "📐 Resize Tableau Dashboards",
         "upload_label": "Upload the .twb or .twbx file",
         "upload_error": "❌ Unable to read the file: {}",
         "tds_not_applicable": "This tool does not apply to .tds files (data source without workbook).",
-        "upload_required":   "⬆️ Upload a .twb or .twbx file to use this tool.",
+        "description":       "Resize the dashboards of a Tableau workbook (.twb / .twbx) and automatically recalculate the position of every object.",
         "resize_apply_all_title":   "Apply to all checked dashboards",
         "resize_common_width":      "Common width",
         "resize_common_height":     "Common height",
@@ -85,6 +108,29 @@ TRANSLATIONS = {
         "resize_download":   "⬇️ Download modified file",
         "resize_no_dashboard": "No dashboard found in this file.",
         "resize_suffix":     "_resized",
+        "steps_expander":    "📋 How to use this tool",
+        "steps_content":     """
+**Step 1 — Load the workbook**
+Upload your **.twb** or **.twbx** file using the button below.
+
+---
+
+**Step 2 — Apply the same dimensions to all dashboards** *(optional)*
+Enter a common width and/or height, check the dashboards to affect, then click **↓ Apply to all**.
+
+*— or —*
+
+**Step 3 — Modify each dashboard individually**
+In the table, check the dashboards to resize and enter their new dimensions row by row.
+
+---
+
+**Step 4 — Run the modification**
+Click the **Modify** button at the bottom of the page.
+
+**Step 5 — Download the result**
+A **Download** button will appear: click it to retrieve the modified file.
+""",
     },
 }
 
@@ -103,6 +149,7 @@ def main():
             options=["🇫🇷 FR", "🇬🇧 EN"],
             horizontal=True,
             key="lang_radio",
+            index=1,
             label_visibility="collapsed",
         )
     lang = "en" if "EN" in _choice else "fr"
@@ -110,13 +157,17 @@ def main():
 
     with _col_title:
         st.title(T["title"])
+        st.caption(T["description"])
+
+    # ── Guide d'utilisation ────────────────────────────────────────
+    with st.expander(T["steps_expander"]):
+        st.markdown(T["steps_content"])
 
     # ── Upload ─────────────────────────────────────────────────────
     xml_file = st.file_uploader(T["upload_label"], type=["twb", "twbx"])
     st.divider()
 
     if xml_file is None:
-        st.info(T["upload_required"])
         return
 
     # ── Chargement et validation du fichier ────────────────────────
