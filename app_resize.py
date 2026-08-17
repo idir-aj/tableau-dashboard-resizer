@@ -150,7 +150,7 @@ def main():
         st.write("")
         _choice = st.radio(
             "Language",
-            options=["🇫🇷 FR", "🇬🇧 EN"],
+            options=["FR", "EN"],
             horizontal=True,
             key="lang_radio",
             index=1,
