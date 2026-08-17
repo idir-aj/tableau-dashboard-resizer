@@ -148,7 +148,7 @@ def main():
     with _col_lang:
         st.write("")
         _choice = st.radio(
-            "",
+            "Language",
             options=["🇫🇷 FR", "🇬🇧 EN"],
             horizontal=True,
             key="lang_radio",
