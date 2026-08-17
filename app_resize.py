@@ -59,25 +59,25 @@ TRANSLATIONS = {
         "steps_content":     """
 > 🔒 **Confidentialité** — L'outil ne lit jamais les données de vos extraits (fichiers `.hyper`). Seule la structure XML du classeur est modifiée. Cependant, les fichiers uploadés transitent par les serveurs de Streamlit Cloud : si votre `.twbx` contient un extrait avec des données sensibles, **préférez uploader le `.twb`** seul.
 
-**Étape 1 — Charger le classeur**
+**Étape 1 — Charger le classeur : **
 Uploadez votre fichier **.twb** ou **.twbx** via le bouton ci-dessous.
 
 ---
 
-**Étape 2 — Appliquer les mêmes dimensions à tous les dashboards** *(optionnel)*
+**Étape 2 — Appliquer les mêmes dimensions à tous les dashboards** *(optionnel) : *
 Saisissez une largeur et/ou une hauteur commune, cochez les dashboards à affecter, puis cliquez sur **↓ Appliquer à tous**.
 
 *— ou —*
 
-**Étape 3 — Modifier chaque dashboard individuellement**
+**Étape 3 — Modifier chaque dashboard individuellement : **
 Dans le tableau, cochez les dashboards à redimensionner et renseignez leurs nouvelles dimensions ligne par ligne.
 
 ---
 
-**Étape 4 — Lancer la modification**
+**Étape 4 — Lancer la modification : **
 Cliquez sur le bouton **Modifier** en bas de page.
 
-**Étape 5 — Télécharger le résultat**
+**Étape 5 — Télécharger le résultat : **
 Un bouton **Télécharger** apparaît : cliquez dessus pour récupérer le fichier modifié.
 """,
     },
@@ -114,25 +114,25 @@ Un bouton **Télécharger** apparaît : cliquez dessus pour récupérer le fichi
         "steps_content":     """
 > 🔒 **Privacy** — This tool never reads the data from your extracts (`.hyper` files). Only the XML structure of the workbook is modified. However, uploaded files transit through Streamlit Cloud's servers: if your `.twbx` contains an extract with sensitive data, **prefer uploading the `.twb` file** instead.
 
-**Step 1 — Load the workbook**
+**Step 1 — Load the workbook : **
 Upload your **.twb** or **.twbx** file using the button below.
 
 ---
 
-**Step 2 — Apply the same dimensions to all dashboards** *(optional)*
+**Step 2 — Apply the same dimensions to all dashboards** *(optional) : *
 Enter a common width and/or height, check the dashboards to affect, then click **↓ Apply to all**.
 
 *— or —*
 
-**Step 3 — Modify each dashboard individually**
+**Step 3 — Modify each dashboard individually : **
 In the table, check the dashboards to resize and enter their new dimensions row by row.
 
 ---
 
-**Step 4 — Run the modification**
+**Step 4 — Run the modification : **
 Click the **Modify** button at the bottom of the page.
 
-**Step 5 — Download the result**
+**Step 5 — Download the result : **
 A **Download** button will appear: click it to retrieve the modified file.
 """,
     },
