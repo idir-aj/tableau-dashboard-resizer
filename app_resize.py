@@ -57,6 +57,8 @@ TRANSLATIONS = {
         "resize_suffix":     "_redimensionné",
         "steps_expander":    "📋 Comment utiliser cet outil",
         "steps_content":     """
+> 🔒 **Confidentialité** — L'outil ne lit jamais les données de vos extraits (fichiers `.hyper`). Seule la structure XML du classeur est modifiée. Cependant, les fichiers uploadés transitent par les serveurs de Streamlit Cloud : si votre `.twbx` contient un extrait avec des données sensibles, **préférez uploader le `.twb`** seul.
+
 **Étape 1 — Charger le classeur**
 Uploadez votre fichier **.twb** ou **.twbx** via le bouton ci-dessous.
 
@@ -110,6 +112,8 @@ Un bouton **Télécharger** apparaît : cliquez dessus pour récupérer le fichi
         "resize_suffix":     "_resized",
         "steps_expander":    "📋 How to use this tool",
         "steps_content":     """
+> 🔒 **Privacy** — This tool never reads the data from your extracts (`.hyper` files). Only the XML structure of the workbook is modified. However, uploaded files transit through Streamlit Cloud's servers: if your `.twbx` contains an extract with sensitive data, **prefer uploading the `.twb` file** instead.
+
 **Step 1 — Load the workbook**
 Upload your **.twb** or **.twbx** file using the button below.
 
